@@ -2,10 +2,7 @@
 #                                                                                                          -
 #         script para rodar um programa em R cujo objetivo é fazer um Diagrama Cor-Magnitude (CMD)         -
 #      das estrelas de um aglomerados aberto muito conhecido da Galáxia, chamada de NGC188, na faixa do    -
-#   infravermelho próximo (J vs. (J-H) a partir dos dados encontrados no arquivo stetsonS_2mass_saida.dat  -
-#                                                                                                          -
-#    Posteriormente é plotado ah isocrona de Padova correspondente, cujos parametros estao encontrados     -
-#             no arquivo mkcmd_Gi02.sh: idade, distancia(Pc), avermelhamento e metalicidade                -
+#   infravermelho próximo (J vs. J-H) a partir dos dados encontrados no arquivo stetsonS_2mass_saida.dat  -
 #                                                                                                          -
 #-----------------------------------------------------------------------------------------------------------
 
@@ -35,7 +32,7 @@ ya <- vector(mode="numeric")
 na <- 0
 for(i in 1:1623){
   za <- z[i]
-   if(za > 80.){
+   if(za > 80.){                       # Probabilidade de pertencer ao aglomerado aberto de estrelas MHC188
 #n_estrelas = n_estrelas + 1
    na <- na+1
    xa[na] <- a[i]
@@ -51,8 +48,10 @@ eixo_x=c(-0.3,0,0.3,0.6,0.9,1.2)
 eixo_y=c(16,15,14,13,12,11,10,9)
 
 plot(a,b,axes=FALSE,frame.plot=TRUE,xlab='J-H',ylab='J',cex.lab=1.2,font.lab=20,tcl=0.4,xaxs="i",yaxt="n",yaxs="i",xlim=c(-0.4,1.3),ylim=c(16,9),pch=16,cex=0.6,col='darkgray')
+# Todas as estrelas do Aglomerado Aberto NGC188
 
 points(xa,ya,col='darkblue',pch=16,cex=0.6)
+# Todas as estrelas do Aglomerado Aberto NGC188 com um probabilidade de pertencer ao aglomerado maior que 80%
 
 axis(side=1,at=eixo_x,tcl=0.6,labels=eixo_x)
 axis(side=4,at=eixo_y,tcl=0.6,labels=FALSE)
@@ -77,13 +76,5 @@ axis(side=2,at=eixo_y,tcl=0.6,labels=FALSE)
 #-----------------------------------------------------------------------------------------------------
 
 
-
-
-
-
-
-#text(x,y,expression(0<= x <= 1))
-mtext("Cleitao Carillo", outer = TRUE, cex = 1.5)
-#mtext("Diagrama HR",outer=TRUE,cex=2,font=2)
 
 dev.off()
