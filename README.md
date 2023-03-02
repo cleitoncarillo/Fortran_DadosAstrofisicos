@@ -1,4 +1,5 @@
 # Fortran_DadosAstrofisicos
- Código escrito em Fortran com o objetivo de manipular tabelas de entrada com dados astronômicos.
-  
-Aglomerados abertos são peças fundamentais para calibração de modelos de evolução estelar e para a compreensão da evolução quı́mica da Galáxia. Embora sejam sistemas bem conhecidos e estudados há muito tempo, existe ainda uma lacuna em relação a determinações auto-consistentes de seus parâmetros fı́sicos. Neste programa em fortran, é feito apenas uma manipulação nos dados de entrada para gerar um arquivo de saída.
+Neste repositório está presente um código escrito em linguagem Fortran com o objetivo de analisar dados astronômicos (), fornecendo um arquivo de saída () com três colunas (parâmetros físicos) relacionados com o brilho (magnitude), temperatura superfícial (índice de cor) e probabilidade de uma dada estrela de pertencer ao aglomerado aberto NGC188 (membership). Os dados foram retirados do banco de dados Vizier (https://vizier.cds.unistra.fr/viz-bin/VizieR-2).
+
+Além disso, foi construído um importante diagrama astronômico que consegue descrever toda a evolução de um dado conjunto de estrelas, chamado de Diagrama Cor-Magnitude (CMD). Tal gráfico foi feito com uso da linguagem R Grafics e mostra dois paineis onde cada ponto de cor preto representa uma estrela com probabilidade acima de 80% de pertencer ao aglomerado aberto NGC188.
+
